@@ -60,7 +60,7 @@ puts C::D.value
 # devuelve "global", le pide al modulo de C el value que C no tiene, usa la variable global
 puts C::E.value
 
-# devuelve "global" porque F no tiene definido un getter para su variable????
+# devuelve "global" porque F no tiene variable value, tiene VALUE
 puts F.value
 
 # 2.
@@ -70,8 +70,7 @@ puts A::value
 # Tira error porque A es un modulo, no se puede instanciar
 #puts A.new.value
 
-# no se si se puede acceder a una clase dentro de un modulo sin pasar por el modulo xd
-# uninitialized constant B ??
+# no se puede acceder a una clase dentro de un modulo sin pasar por el modulo
 #puts B.value
 
 # Imprime "D" porque D tiene getter, esto está repetido

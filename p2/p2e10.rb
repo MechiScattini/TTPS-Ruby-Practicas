@@ -1,6 +1,8 @@
 module Countable
 
-	COUNT = Hash.new(0)
+	def count
+		@count ||= Hash.new(0)
+	end
 
 	module ClassMethods
 
@@ -10,7 +12,7 @@ module Countable
 			# cambio el nombre del metodo original (sym) por el nuevo nombre
 			alias_method new_name, sym
 			# defino un método que cuando se llame a sym, contabilize en count y despues llame al sym original
-			define_method(sym) { COUNT[sym]+=1; new_name }
+			define_method(sym) { count[sym]+=1; send new_name }
 
 		end
 
@@ -21,11 +23,11 @@ module Countable
 	end
 
 	def invoked?(sym)
-    COUNT[sym] >= 1 ? true : false
+    count[sym] >= 1 ? true : false
 	end
 
   def invoked(sym)
-  	COUNT[sym]
+  	count[sym]
 	end
 
 end
