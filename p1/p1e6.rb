@@ -4,11 +4,11 @@ def tiempo_en_palabras(t)
 	prefix3 = t.hour == 0 ? "Casi es la " : "Casi son las "
 	case t.min
 	when 0..10
-			return prefix + t.hour + " en punto"
+			return prefix + t.hour.to_s + " en punto"
 	when 11..20
-		return prefix + t.hour + " y cuarto"
+		return prefix + t.hour.to_s + " y cuarto"
 	when 21..34
-		return prefix + t.hour + " y media"
+		return prefix + t.hour.to_s + " y media"
 	when 35..44
 		return prefix2 + (t.hour + 1).to_s + " menos veinticinco"
 	when 45..55
