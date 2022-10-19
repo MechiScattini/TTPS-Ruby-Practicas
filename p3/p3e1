@@ -1,0 +1,15 @@
+Investigá la jerarquía de clases que presenta Ruby para las excepciones. ¿Para qué se utilizan las siguientes clases?
+	ArgumentError
+		Es subclase de StandardError, se lanza cuando los argumentos de un llamado a procedimiento son erróneos
+		Ejemplo: passing the wrong number of arguments
+
+	IOError
+	NameError
+	NotImplementedError
+	RuntimeError
+	StandardError
+	StopIteration
+	SystemExit
+	SystemStackError
+	TypeError
+	ZeroDivisionError
