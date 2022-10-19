@@ -1,15 +1,65 @@
 Investigá la jerarquía de clases que presenta Ruby para las excepciones. ¿Para qué se utilizan las siguientes clases?
+Toda la info está sacada de ruby-doc.com
+
 	ArgumentError
 		Es subclase de StandardError, se lanza cuando los argumentos de un llamado a procedimiento son erróneos
-		Ejemplo: passing the wrong number of arguments
+		Ejemplos:
+				passing the wrong number of arguments
+				passing an argument that is not acceptable
 
 	IOError
+		También subclase de StandardError, se lanza cuando hay algún error en alguna IO
+		Ejemplo:
+			Error al leer un archivo
+			File.open("/etc/hosts") { |f| f.close; f.read } --> IOError: closed stream
+
 	NameError
+		Also StandardError subclass, raised when a given name is invalid or undefined
+		Ejemplo:
+			puts foo --> NameError: undefined local variable or method 'foo' for main:Object
+
 	NotImplementedError
+		Subclase de ScriptError, raised when a feature is not implemented on the current platform. For example, methods depending on the fsync or fork system calls may raise this exception if the underlying OS or Ruby runtime does not support them
+
 	RuntimeError
+		Subclase de StandardError, a generic error class raised when an invalid operation is attempted.
+		Example:
+			Kernel#raise will raise a RuntimeError if no Exception class is specified
+			raise "ouch" --> RuntimeError: ouch
+
 	StandardError
+		The most standard error types ar subclasses of StandardError. A rescue clause without an explicit Exception class will rescue all StandardErrors (and only those)
+
 	StopIteration
+		Subclase de IndexError, raised to stop the interation, in particular by Enumerator#next. It is rescued by Kernel#loop
+
 	SystemExit
+		Como toda excepción, es subclase de Exception
+		Raised by exit to initiate the termination of the script
+
 	SystemStackError
+		Como toda excepción, es subclase de Exception
+		Raised in case of stack overflow
+		Ejemplo:
+			def me_myself_and_i
+				me_myself_and_i
+			end
+
+			me_myself_and_i
+			raises --> SystemStackError: stack level too deep
+
 	TypeError
+		Subclase de StandardError, raised when encountering an object that is not of the expected type
+		Ejemplo:
+			[1,2,3].first("two") --> TypeError: no implicit conversion of String to Integer
+
 	ZeroDivisionError
+		Subclase de StandardError, raised when attempting to divide an integer by 0
+		Only raised when dividing by an exact 0
+		Ejemplos:
+			42 / 0 --> ZeroDivisionError: divided by 0
+
+			but:
+				42 / 0.0 => Float::INFINITY
+				42 / -0.0 => -Float::INFINITY
+				0 / 0.0 => NaN
