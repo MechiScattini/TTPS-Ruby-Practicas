@@ -1,0 +1,30 @@
+¿Para qué sirven begin .. rescue .. else y ensure? Pensá al menos 2 casos concretor en que usarías estas sentencias en un script Ruby
+
+El bloque begin end se utiliza para el manejo de excepciones
+
+Rescue es la sentencia utilizada para atrapar una excepción, se puede indicar una explicitamente o no poner nada
+en el caso de no especificar el tipo de excepción a catchear, se catchean los StandardError
+en caso de que la excepción no matchee con ningún rescue, se sale del bloque begin end y se busca un handler siguiendo para arriba de la pila de ejecución
+
+Else se utiliza dentro del bloque begin end para indicar qué hacer en caso de que ningún rescue se ejecute
+
+Ensure es la sentencia que se utiliza dentro del bloque begin end para especificar instrucciones a ejecutar se haya producido o no una excepción
+
+
+Casos:
+
+
+	def metodo(*args, &block)
+		block.call(*args)
+		rescue RuntimeError
+			puts "Hay algo mal que no anda bien"
+			:rt
+		rescue NoMethodError => nME
+			puts "Y este método?" + nME.message
+			:nm
+		rescue
+			puts "Y ahora?"
+			raise
+		else
+			:ok
+	end

@@ -1,0 +1,45 @@
+¿Para qué sirve redo? ¿Qué diferencias principales tiene con retry?
+
+El retry permite volver a ejecutar un bloque begin end (excepciones)
+
+El redo es como lo mismo pero para loops y bloques, permite repetir la current iteration o step en el que esté
+
+Ejemplos:
+	retry:
+
+		begin
+			puts "Iteration"
+			raise
+		rescue
+			retry
+		end
+
+		El código anterior entra en un loop que siempre imprime "Iteration"
+
+Con el redo se puede lograr algo parecido
+
+	10.times do |i|
+		puts "Iteration #{i}"
+		redo if i > 2
+	end
+
+	Imprime:
+		Iteration 0
+		Iteration 1
+		Iteration 2
+		Iteration 3
+		Iteration 3
+		Iteration 3
+		Iteration 3
+		...
+
+Lo mismo de antes pero con retry:
+
+		10.times do |i|
+			begin
+				puts "Iteration #{i}"
+				raise if i > 2
+			rescue
+				retry
+			end
+		end

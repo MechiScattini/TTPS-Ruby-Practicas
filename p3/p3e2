@@ -1,0 +1,6 @@
+¿Cuál es la diferencia entre raise y throw? ¿Para qué usarías una u otra opción?
+La diferencia entre raise y throw en Ruby es que raise es utilizado para el manejo de excepciones, en cambio throw se utiliza para control de flujo
+
+El manejo de excepciones (raise, rescue) se utiliza para manejar situaciones en las que algo sale mal y permite controlar la situación cortando la ejecución o haciendo lo necesario para dejar todo lo mejor posible (?)
+
+El control de flujo (throw, catch) se puede usar para poder manejar mejor alguna situación de anidamiento o lo ke sea

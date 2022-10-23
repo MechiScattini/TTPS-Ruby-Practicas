@@ -1,0 +1,5 @@
+¿Para qué sirve retry? ¿Cómo podés evitar caer en un loop infinito al usarla?
+
+El retry se utiliza para intentar arreglar el error causado
+
+podes evitar caer en un loop contando la cantidad de retrys y poniendo un tope
