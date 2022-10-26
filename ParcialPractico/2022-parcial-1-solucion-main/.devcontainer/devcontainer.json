@@ -1,0 +1,23 @@
+{
+	"name": "Ruby",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "2.7",
+			"NODE_VERSION": "none"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rebornix.Ruby",
+				"kaiwood.endwise",
+				"wingrunr21.vscode-ruby"
+			]
+		}
+	},
+	"remoteUser": "vscode",
+	"features": {
+		"git": "os-provided"
+	}
+}
