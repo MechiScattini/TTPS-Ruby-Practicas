@@ -1,0 +1,7 @@
+2
+ruby
+5
+7
+perro
+13
+vaca
