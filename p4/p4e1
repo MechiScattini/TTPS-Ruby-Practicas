@@ -1,0 +1,67 @@
+El framework está compuesto de diferentes librerías:
+• ActionMailer
+		1. ¿Qué funcion principal cumple?
+				Delivery de mails y testing
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				Si se tiene una app de compras en rails, utilizar ActionMailer para enviar un mail con el comprobante de cada compra
+
+• ActionPack
+		1. ¿Qué funcion principal cumple?
+				Responsable del manejo de requerimientos y respuestas HTTP. Se encarga del ruteo mapeando URLs en acciones mediante controladores.
+				Las respuestas se generan a partir de las vistas. Corresponde al V y C del paradigma MVC
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				En cualquier app que quieras implementar el modelo MVC (?)
+
+• ActionView
+		1. ¿Qué funcion principal cumple?
+				Responsable del templating de vistas y su renderización. Integra helpers que asisten en la construcción de respuestas
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				Una app en la que se utilice el modelo MVC, se utiliza para la parte de las vistas
+
+• ActiveJob
+		1. ¿Qué funcion principal cumple?
+				Manejo de tareas asíncronas agnóstico del backend de manejo de colas
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				Caso que se quiera contar la cantidad de mails recibidos cada cierto tiempo, se puede crear un job asíncrono que lo haga ¿??
+
+• ActiveModel
+		1. ¿Qué funcion principal cumple?
+				provee módulos y funcionalidades similares a las presentes en AR. De esta forma, ActionPack puede utilizar ActiveModel como objetos AR de forma indiferente dando independencia del ORM que podría ser personalizado
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				Se podría utilizar en algún caso que se quieran usar modelos sin utilizar una bd realmente.
+
+• ActiveRecord
+		1. ¿Qué funcion principal cumple?
+				framework para la abstracción de las bases de datos. Un ORM que representa la M de MVC
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				En cualquier app que requiera una bd la usaría para mapear los objetos AR a objetos ruby
+
+• ActiveSupport
+		1. ¿Qué funcion principal cumple?
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+
+• ActionCable
+		1. ¿Qué funcion principal cumple?
+				integra websockets a rails
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				Se puede utilizar por ejemplo para hacer un chat con un websocket
+
+• ActiveStorage
+		1. ¿Qué funcion principal cumple?
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+
+• ActionText
+		1. ¿Qué funcion principal cumple?
+				manejo de texto enriquecido y su edición en rails
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				Hacer algún área de texto con estilos más lindos
+
+• ActionMailbox
+		1. ¿Qué funcion principal cumple?
+				Ruteo de mail entrante del estilo de controlador para su procesamiento en rails
+		2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
+				Se puede utilizar por ejemplo para recibir mails de los pull request de github y generar una respuesta
+
+Para cada una de estas librerías, analizá y respondé las siguientes preguntas:
+1. ¿Qué funcion principal cumple?
+2. Citá algún ejemplo donde se te ocurra que podrías utilizarla.
